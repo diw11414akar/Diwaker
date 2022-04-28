@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: SafeArea(
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -90,8 +90,9 @@ class HomeScreen extends StatelessWidget {
                       child: Text('You May also like',style: TextStyle(fontSize: 16),)),
                 ),
                 Container(
-                  height: 200,
+                  height: 300,
                   child: ListView.builder(
+                    shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: books.length,
                       itemBuilder: (context, index) {
